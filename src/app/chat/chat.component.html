@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <div class="chat-container">
+        <div class="message-container">
+            <div *ngFor="let message of messages; let i = index;">
+                <div *ngIf="message.sent_by == sender.user_id" class="user-message">
+                    {{message.message}}
+                </div>
+                <div *ngIf="message.sent_by == receiver.user_id" class="assistant-message">
+                    {{message.message}}
+                </div>
+            </div>
+        </div>
+        <input type="text" id="message-input" class="message-input" placeholder="Type your message here">
+        <button id="send-button" class="send-button">Send</button>
+    </div>
+</body>
+</html>
