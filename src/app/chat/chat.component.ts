@@ -54,6 +54,7 @@ export class ChatComponent {
     console.log("CHAT ID: ", this.chatId);
     
     this.messageService.setupSocketConnection();
+    this.messageService.joinRoom("" + this.chatId);
 
     this.messageService.subscribeToMessages((err: any, data: any) => {
       // console.log("NEW MESSAGE ", data);
@@ -79,8 +80,10 @@ export class ChatComponent {
 
     let roomObject = {
       message: this.currentMessage,
-      roomName: this.CHAT_ROOM
+      roomName: "" + this.chatId
     };
+    // console.log("ROOM Obkect: ", roomObject);
+    
     this.messageService.sendMessage(roomObject, (callBack: any) => {
       console.log("ACKNOWLEDGEMENT ", callBack);
     });
