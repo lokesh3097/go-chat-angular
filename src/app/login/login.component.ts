@@ -18,14 +18,18 @@ export class LoginComponent {
   checkUser() {
     // console.log(this.email);
 
-    this.http.checkUser(this.email).subscribe(
-      (user) => {
-        console.log("User from Server: ", user);
+    // this.http.checkUser(this.email).subscribe(
+    //   (user) => {
+    //     console.log("User from Server: ", user);
 
-        this.router.navigate(['contact', {
-          sender: JSON.stringify(user)
-        }]);
-      }
-    );
+    //     this.router.navigate(['contact', {
+    //       sender: JSON.stringify(user)
+    //     }]);
+    //   }
+    // );
+
+    this.router.navigate(['contact', {
+      senderEmail: this.email
+    }]);
   }
 }

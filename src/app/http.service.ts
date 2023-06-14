@@ -20,4 +20,16 @@ export class HttpService {
   getChatsByChatId(chatId: any) {
     return this.http.get(this.serverURL + "/chat/" + chatId);
   }
+
+  getChatWithEmails(senderEmail: any, receiverEmail: any) {
+    return this.http.get(this.serverURL + "/chat/emails/" + senderEmail + "/" + receiverEmail);
+  }
+
+  addMessageToChat(message: any, chatId: any, sentBy: any) {
+    return this.http.post(this.serverURL + '/message', {
+      message: message,
+      chatId: chatId,
+      sentBy: sentBy
+    });
+  }
 }

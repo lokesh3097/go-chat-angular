@@ -12,8 +12,8 @@
                 </div>
             </div>
         </div>
-        <input type="text" id="message-input" class="message-input" placeholder="Type your message here">
-        <button id="send-button" class="send-button">Send</button>
+        <input type="text" id="message-input" class="message-input" [(ngModel)]="currentMessage" placeholder="Type your message here">
+        <button id="send-button" (click)="sendCurrentMessage()" class="send-button">Send</button>
     </div>
 </body>
 </html>
