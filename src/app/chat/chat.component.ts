@@ -62,6 +62,8 @@ export class ChatComponent {
         message: data.message,
         sent_by: this.receiver.user_id
       };
+      if (this.messages == null)
+        this.messages = [];
       this.messages = [...this.messages, newMessage];
       console.log("NEW Messages: ", this.messages);
     });
